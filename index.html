@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoría de Grafos</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* CSS personalizado */
+        .banner {
+            background: url('banner-image.jpg') no-repeat center center; /* Imagen del banner principal */
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 15px;
+        }
+
+        .section-title {
+            color: #6c757d;
+            margin-bottom: 40px;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: #6c63ff;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #6c63ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header class="bg-light shadow-sm fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light container">
+            <img src="img/logo.png" alt="logo" class="img-fluid mb-3" style="max-width: 50px;">
+            <a class="navbar-brand fw-bold" href="#">Teoría de Grafos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#conceptos">Conceptos Básicos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#propiedades">Propiedades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#aplicaciones">Aplicaciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#interactivo">Conecta los nodos</a></li>
+                   
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="banner d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold text-dark">Explora la Teoría de Grafos</h1>
+            <p class="lead text-dark">Descubre cómo los grafos construyen el mundo que conocemos (Hacer Click en las imagenes para más información).</p>
+            <a href="#conceptos" class="btn btn-primary btn-lg">Comienza Ahora</a>
+        </div>
+    </section>
+
+    <!-- Secciones Destacadas -->
+    <section id="conceptos" class="py-5">
+        <div class="container text-center">
+            <h2 class="section-title">Conceptos Básicos</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <!-- Imagen para el concepto "¿Qué es un grafo?" -->
+                    <img src="img/imagen1.png" alt="Imagen de Grafo" class="img-fluid mb-3" data-bs-toggle="modal" data-bs-target="#infomodal" >
+                    <div class="feature-icon"><i class="bi bi-graph-up"></i></div>
+                    <h4>¿Qué es un grafo?</h4>
+                    <p>Conoce los elementos esenciales que componen los grafos: vértices y aristas.</p>
+                </div>
+                <div class="col-md-4">
+                    <!-- Imagen para el concepto "Tipos de Grafos" -->
+                    <img src="img/imagen2.png" alt="Tipos de Grafos" class="img-fluid mb-3" data-bs-toggle="modal" data-bs-target="#infomodal1" >
+                    <div class="feature-icon"><i class="bi bi-diagram-3"></i></div>
+                    <h4>Tipos de Grafos</h4>
+                    <p>Descubre las diferencias entre grafos dirigidos, no dirigidos y ponderados.</p>
+                </div>
+                <div class="col-md-4">
+                    <!-- Imagen para el concepto "Representación" -->
+                    <img src="img/imagen3.jpg" alt="Representación de Grafos" data-bs-toggle="modal" class="img-fluid mb-3" data-bs-target="#infomodal3">
+                    <div class="feature-icon"><i class="bi bi-puzzle"></i></div>
+                    <h4>Representación</h4>
+                    <p>Explora cómo los grafos pueden representarse mediante matrices y listas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <section class="banner d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold text-dark">Propiedades de los Grafos</h1>
+            <p class="lead text-dark">Explora las principales características y propiedades de los grafos en matemáticas</p>
+        </div>
+    </section>
+
+    <!-- Sección de Propiedades -->
+    <section id="propiedades" class="py-5">
+        <div class="container text-center">
+            <h2 class="section-title">Propiedades de los Grafos</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Imagen para la sección "Caminos y Circuitos" -->
+                    <img src="img/camino1.png" alt="Caminos y Circuitos" class="img-fluid mb-3" data-bs-toggle="modal" data-bs-target="#caminos">
+                    <div class="feature-icon"><i class="bi bi-map"></i></div>
+                    <h4>Caminos y Circuitos</h4>
+                    <p>Estudia los conceptos de caminos, circuitos, y cómo identificar rutas Eulerianas y Hamiltonianas.</p>
+                </div>
+                <div class="col-md-6">
+                    <!-- Imagen para la sección "Conectividad" -->
+                    <img src="img/conectividad.png" data-bs-toggle="modal" data-bs-target="#conectividad" alt="Conectividad" class="img-fluid mb-3">
+                    <div class="feature-icon"><i class="bi bi-link-45deg"></i></div>
+                    <h4>Conectividad</h4>
+                    <p>Analiza la conectividad de los grafos y comprende cómo determinar si un grafo es conexo.</p>
+                </div>
+                <div class="col-md-6">
+                    <!-- Imagen para la sección "Árboles" -->
+                    <img src="img/arboles.png" alt="Árboles" data-bs-target="#arboles" data-bs-toggle="modal" class="img-fluid mb-3">
+                    <div class="feature-icon"><i class="bi bi-tree"></i></div>
+                    <h4>Árboles</h4>
+                    <p>Descubre qué son los árboles y estudia sus propiedades únicas dentro de la teoría de grafos.</p>
+                </div>
+                <div class="col-md-6">
+                    <!-- Imagen para la sección "Grafos Planos" -->
+                    <img src="img/planos.png" data-bs-toggle="modal" data-bs-target="#planos" alt="Grafos Planos" class="img-fluid mb-3">
+                    <div class="feature-icon"><i class="bi bi-geo"></i></div>
+                    <h4>Grafos Planos</h4>
+                    <p>Investiga los grafos planos y aprende sobre la teoría de la coloración de grafos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Sección de Aplicaciones -->
+<section id="aplicaciones" class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="section-title">Aplicaciones de los Grafos</h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <!-- Imagen para "Redes de Transporte" -->
+                <img src="img/transporte.jpg" data-bs-toggle="modal" data-bs-target="#transporte" alt="Redes de Transporte" class="img-fluid mb-3">
+                <div class="feature-icon"><i class="bi bi-truck"></i></div>
+                <h4>Redes de Transporte</h4>
+                <p>Los grafos permiten optimizar rutas y conexiones en redes de transporte como carreteras y líneas de tren.</p>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <!-- Imagen para "Análisis de Redes Sociales" -->
+                <img src="img/redes_sociales.png" data-bs-toggle="modal" data-bs-target="#sociales" alt="Análisis de Redes Sociales" class="img-fluid mb-3">
+                <div class="feature-icon"><i class="bi bi-people"></i></div>
+                <h4>Análisis de Redes Sociales</h4>
+                <p>Estudia cómo se conectan las personas y se identifican comunidades utilizando grafos.</p>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <!-- Imagen para "Bioinformática" -->
+                <img src="img/bioinformatica.jpg" data-bs-toggle="modal" data-bs-target="#bioinfor" alt="Bioinformática" class="img-fluid mb-3">
+                <div class="feature-icon"><i class="bi bi-flower3"></i></div>
+                <h4>Bioinformática</h4>
+                <p>Los grafos ayudan a modelar interacciones entre proteínas y analizar secuencias genéticas.</p>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <!-- Imagen para "Algoritmos en Computación" -->
+                <img src="img/algoritmo.png" data-bs-toggle="modal" data-bs-target="#algoritmo" alt="Algoritmos en Computación" class="img-fluid mb-3">
+                <div class="feature-icon"><i class="bi bi-laptop"></i></div>
+                <h4>Algoritmos en Computación</h4>
+                <p>Desde búsquedas hasta enrutamiento, los grafos son fundamentales para resolver problemas computacionales.</p>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <!-- Imagen para "Planeación de Redes Eléctricas" -->
+                <img src="img/redes.png" data-bs-target="#redes" data-bs-toggle="modal" alt="Redes Eléctricas" class="img-fluid mb-3">
+                <div class="feature-icon"><i class="bi bi-lightning"></i></div>
+                <h4>Planeación de Redes Eléctricas</h4>
+                <p>Se utilizan grafos para diseñar y optimizar la distribución eficiente de energía en redes eléctricas.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección Interactiva: Conexión de Nodos con Representación Gráfica -->
+<section id="interactivo" class="py-5">
+    <div class="container text-center">
+        <h2 class="section-title">Conecta los Nodos</h2>
+        <p>Selecciona dos nodos para visualizar su conexión tanto gráfica como textualmente.</p>
+
+        <!-- Representación Gráfica -->
+        <canvas id="grafo-canvas" width="600" height="500" class="mb-4 border"></canvas>
+
+        <!-- Representación de Nodos -->
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="d-flex justify-content-around align-items-center mb-4">
+                    <!-- Nodos como botones -->
+                    <button class="btn btn-primary btn-lg node-button" data-node="A">Nodo A</button>
+                    <button class="btn btn-primary btn-lg node-button" data-node="B">Nodo B</button>
+                    <button class="btn btn-primary btn-lg node-button" data-node="C">Nodo C</button>
+                </div>
+                <div class="d-flex justify-content-around align-items-center mb-4">
+                    <button class="btn btn-primary btn-lg node-button" data-node="D">Nodo D</button>
+                    <button class="btn btn-primary btn-lg node-button" data-node="E">Nodo E</button>
+                    <button class="btn btn-primary btn-lg node-button" data-node="F">Nodo F</button>
+                
+                </div>
+                <!-- Visualización de la conexión -->
+                <div id="connection-output" class="alert alert-secondary" role="alert">
+                    Selecciona dos nodos para mostrar su conexión.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Script JavaScript para la Representación Gráfica -->
+<script>
+    const canvas = document.getElementById('grafo-canvas');
+    const ctx = canvas.getContext('2d');
+    const buttons = document.querySelectorAll('.node-button');
+    const output = document.getElementById('connection-output');
+    let firstNode = null;
+
+    // Coordenadas de los nodos en el canvas
+    const nodePositions = {
+        A: { x: 200, y: 100 }, // Nodo en la parte superior izquierda
+        B: { x: 400, y: 100 }, // Nodo en la parte superior derecha
+    C: { x: 500, y: 250 }, // Nodo en el lado derecho
+    D: { x: 300, y: 400 }, // Nodo en la parte inferior
+E: { x: 100, y: 250 }, // Nodo en el lado izquierdo
+F: { x: 300, y: 250 }  // Nodo central dentro del pentágono
+    };
+
+    // Dibujar los nodos en el canvas
+    function drawNodes() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpiar el canvas
+        ctx.fillStyle = '#007bff';
+        ctx.strokeStyle = '#000';
+
+        // Dibujar cada nodo
+        for (const [key, position] of Object.entries(nodePositions)) {
+            ctx.beginPath();
+            ctx.arc(position.x, position.y, 20, 0, 2 * Math.PI); // Nodos como círculos
+            ctx.fill(); // Color del nodo
+            ctx.stroke(); // Contorno del nodo
+            ctx.fillStyle = '#fff';
+            ctx.textAlign = 'center';
+            ctx.font = '16px Arial';
+            ctx.fillText(key, position.x, position.y + 5); // Etiqueta del nodo
+            ctx.fillStyle = '#007bff';
+        }
+    }
+
+    // Dibujar una conexión entre dos nodos
+    function drawConnection(node1, node2) {
+        const pos1 = nodePositions[node1];
+        const pos2 = nodePositions[node2];
+        ctx.strokeStyle = '#28a745';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(pos1.x, pos1.y);
+        ctx.lineTo(pos2.x, pos2.y); // Línea entre nodos
+        ctx.stroke();
+    }
+
+    // Lógica de interacción
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const node = button.getAttribute('data-node');
+            if (!firstNode) {
+                // Si es el primer nodo seleccionado
+                firstNode = node;
+                output.textContent = `Primer nodo seleccionado: ${firstNode}. Elige el segundo nodo.`;
+            } else {
+                // Si es el segundo nodo seleccionado
+                const secondNode = node;
+                output.textContent = `Conexión establecida entre el nodo ${firstNode} y el nodo ${secondNode}.`;
+
+                // Dibujar la conexión en el canvas
+                drawConnection(firstNode, secondNode);
+                firstNode = null; // Reiniciar selección
+            }
+        });
+    });
+
+    // Dibujar nodos iniciales al cargar la página
+    drawNodes();
+</script>
+    <footer>
+        <div class="container text-center">
+            <p class="mb-0">© 2025 Teoría de Grafos | Todos los derechos reservados</p>
+            <p><a href="#contacto">Contáctanos</a> | <a href="#">Política de Privacidad</a></p>
+            <p class="center">Desarrollador:</p>
+            <p>TSU. Frederick Rodriguez <a href="https://www.linkedin.com/in/frederick-rodr%C3%ADguez-ballejo-172245355/" target="_blank" style="margin: 0 10px; font-size: 24px; color: #0077B5;">
+                <i class="fab fa-linkedin"></i>
+              </a>  <a href="https://github.com/frederickteradev" target="_blank" style="margin: 0 10px; font-size: 24px; color: #000000;">
+                <i class="fab fa-github"></i>
+              </a></p>
+            
+        </div>
+    </footer>
+
+<!-- Modal -->
+<div class="modal fade" id="infomodal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="infoModalLabel">¿Qué es un Grafo?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+  Un grafo es una estructura matemática utilizada para modelar relaciones entre objetos. Está compuesto por vértices (también conocidos como nodos) y aristas (o enlaces) que conectan pares de vértices. Los grafos pueden ser dirigidos o no dirigidos, dependiendo de si las aristas tienen una dirección específica. Además, los grafos pueden representar una amplia variedad de sistemas, desde redes sociales hasta rutas de transporte y redes de comunicación. En un grafo dirigido, las aristas tienen una dirección específica, mientras que en un grafo no dirigido, las aristas no tienen dirección y simplemente conectan dos vértices. Esta estructura permite estudiar y analizar propiedades importantes como la conectividad, la distancia entre nodos y la existencia de ciclos, entre otros aspectos.
+</div>
+            <img src="img/imagenmodal1.png" alt="Imagen grafo" class="img-fluid mb-3">
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="infomodal1" tabindex="-1" aria-labelledby="infomodal1Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="infomodal1Label">Tipos de Grafos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Existen varios tipos de grafos, cada uno con características y aplicaciones específicas:</p>
+
+                <h6>Grafos Dirigidos</h6>
+                <img src="img/grafo_dirigido.png" alt="Grafo Dirigido" class="img-fluid mb-3">
+                <p>Las aristas en un grafo dirigido tienen una dirección específica, representando relaciones unidireccionales. Esto es útil en situaciones donde el orden importa, como en diagramas de flujo y redes de rutas.</p>
+
+                <h6>Grafos No Dirigidos</h6>
+                <img src="img/grafo_no_dirigido.png" alt="Grafo No Dirigido" class="img-fluid mb-3">
+                <p>Las aristas en un grafo no dirigido no tienen dirección, representando relaciones bidireccionales. Son comúnmente usados para modelar redes sociales y conexiones de infraestructura donde la reciprocidad es inherente.</p>
+
+                <h6>Grafos Ponderados</h6>
+                <img src="img/grafo_ponderado.png" alt="Grafo Ponderado" class="img-fluid mb-3">
+                <p>En un grafo ponderado, las aristas tienen un peso asociado, que puede representar costos, distancias u otros valores. Esto es especialmente útil en la optimización de rutas y en la solución de problemas como el del viajero o las redes de distribución.</p>
+
+                <p>Estos tipos de grafos permiten modelar y analizar diferentes tipos de problemas en diversas áreas como la informática, la biología y las ciencias sociales.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="infomodal3" tabindex="-1" aria-labelledby="infomodal2Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="infomodal2Label">Representación de Grafos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Los grafos pueden representarse de varias maneras, cada una con sus propias ventajas y aplicaciones específicas. Las representaciones más comunes son las matrices y las listas de adyacencia:</p>
+
+                <h6>Matrices de Adyacencia</h6>
+                <img src="img/matrices.png" alt="Matriz de Adyacencia" class="img-fluid mb-3">
+                <p>Una matriz de adyacencia es una tabla de tamaño NxN donde N es el número de vértices. Cada entrada en la matriz indica si existe una arista entre dos vértices específicos. Es útil para grafos densos donde la mayoría de los pares de vértices están conectados.</p>
+
+                <h6>Listas de Adyacencia</h6>
+                <img src="img/lista.png" alt="Lista de Adyacencia" class="img-fluid mb-3">
+                <p>En una lista de adyacencia, cada vértice tiene una lista asociada que contiene los vértices a los que está conectado. Esta representación es eficiente en términos de espacio para grafos dispersos donde hay pocas conexiones entre vértices.</p>
+
+                <h6>Grafos Ponderados</h6>
+                <img src="img/ponderados.png" alt="Grafo Ponderado" class="img-fluid mb-3">
+                <p>En los grafos ponderados, las aristas tienen un peso asociado. Tanto en matrices como en listas de adyacencia, estos pesos pueden ser almacenados para representar la relación entre los nodos. Este tipo de grafo es útil en aplicaciones como la optimización de rutas y análisis de redes.</p>
+
+                <p>Cada una de estas representaciones ofrece diferentes ventajas dependiendo del tipo de grafo y del problema que se esté tratando de resolver.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+    <!-- Pie de Página -->
+
+<!--modal-->
+<div class="modal fade" id="caminos" tabindex="-1" aria-labelledby="caminos1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="caminos1">Caminos y Circuitos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                
+            </div>
+            <div class="modal-body">
+                <p>Los caminos y circuitos son conceptos fundamentales en la teoría de grafos, ya que describen cómo se pueden recorrer los vértices y aristas de un grafo. Comprender estos conceptos es esencial para resolver problemas en diversas aplicaciones, desde redes de transporte hasta algoritmos de optimización.</p>
+
+<h6>Caminos en Grafos</h6>
+<p>Un <strong>camino</strong> en un grafo es una secuencia de vértices donde cada par de vértices consecutivos está conectado por una arista. Los caminos pueden clasificarse de la siguiente manera:</p>
+<ul>
+    <li><strong>Caminos Simples:</strong> No repiten vértices. Son útiles para encontrar rutas únicas entre dos puntos.</li>
+    <li><strong>Caminos Cerrados:</strong> Comienzan y terminan en el mismo vértice, permitiendo la repetición de vértices. Se utilizan en problemas de circuitos y recorridos.</li>
+    <li><strong>Caminos de Longitud k:</strong> Tienen exactamente k aristas, lo que permite analizar la conectividad en un número específico de pasos.</li>
+</ul>
+
+<h6>Circuitos en Grafos</h6>
+<p>Un <strong>circuito</strong> es un tipo especial de camino que comienza y termina en el mismo vértice sin repetir aristas. Los circuitos son importantes en la teoría de grafos y se clasifican en:</p>
+<ul>
+    <li><strong>Circuitos Eulerianos:</strong> Utilizan cada arista exactamente una vez. Un grafo tiene un circuito euleriano si es conexo y todos sus vértices tienen grado par. Este concepto es fundamental en problemas de rutas, como el famoso problema del correo de Königsberg.</li>
+    <li><strong>Circuitos Hamiltonianos:</strong> Visitan cada vértice exactamente una vez. Determinar si un grafo tiene un circuito hamiltoniano es un problema NP-completo, lo que significa que no se conoce un algoritmo eficiente para resolverlo en todos los casos.</li>
+</ul>
+
+<h6>Distancia en un Grafo</h6>
+<p>La <strong>distancia</strong> entre dos vértices se define como la longitud del camino más corto que los conecta. Esta medida es crucial en aplicaciones como redes de transporte y comunicación, donde se busca minimizar el costo o el tiempo de viaje.</p>
+
+<h6>Algoritmos de Búsqueda</h6>
+<p>Para encontrar caminos y circuitos, se utilizan algoritmos de búsqueda como:</p>
+<ul>
+    <li><strong>BFS (Búsqueda en Anchura):</strong> Explora todos los vértices a un nivel de profundidad antes de pasar al siguiente. Es útil para encontrar el camino más corto en grafos no ponderados.</li>
+    <li><strong>DFS (Búsqueda en Profundidad):</strong> Explora lo más profundo posible antes de retroceder. Es útil para explorar todas las posibles rutas en un grafo.</li>
+</ul>
+
+<p>Estos algoritmos son esenciales para explorar grafos y resolver problemas relacionados con caminos y circuitos. La comprensión de estos conceptos permite abordar problemas prácticos en el mundo real, como la optimización de rutas en sistemas de transporte y la planificación de redes.</p>
+                
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+
+
+
+<div class="modal fade" id="conectividad">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Conectividad</h2>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+            </div>
+            <div class="modal-body">
+                <p>La <strong>conectividad</strong> en grafos es un concepto fundamental que describe la capacidad de los vértices de un grafo para estar interconectados a través de aristas. La conectividad es crucial en diversas aplicaciones, como redes de comunicación, transporte y análisis de redes sociales.</p>
+
+<h6>Definición de Conectividad</h6>
+<p>Un grafo se considera <strong>conexo</strong> si existe un camino entre cualquier par de vértices. En otras palabras, es posible llegar de un vértice a otro siguiendo las aristas del grafo. Si un grafo no es conexo, se puede dividir en componentes conexos, que son subconjuntos de vértices donde cada par está conectado.</p>
+
+<h6>Tipos de Conectividad</h6>
+<p>La conectividad se puede clasificar en diferentes tipos:</p>
+<ul>
+    <li><strong>Conectividad de Vértices:</strong> Un grafo es <strong>k-conexo</strong> si se necesitan al menos k vértices para desconectarlo. Esto significa que, al eliminar menos de k vértices, el grafo sigue siendo conexo.</li>
+    <li><strong>Conectividad de Aristas:</strong> Un grafo es <strong>k-conexo</strong> si se necesitan al menos k aristas para desconectarlo. Similar a la conectividad de vértices, esto implica que al eliminar menos de k aristas, el grafo permanece conectado.</li>
+</ul>
+
+<h6>Componentes Conexos</h6>
+<p>En un grafo no conexo, los <strong>componentes conexos</strong> son subconjuntos de vértices donde cada par de vértices está conectado, pero no hay conexión con vértices en otros componentes. Cada componente conexo puede ser tratado como un grafo independiente en términos de análisis y algoritmos.</p>
+
+<h6>Algoritmos para Determinar Conectividad</h6>
+<p>Existen varios algoritmos que permiten determinar la conectividad de un grafo:</p>
+<ul>
+    <li><strong>Algoritmo de DFS (Búsqueda en Profundidad):</strong> Se puede utilizar para explorar todos los vértices de un grafo y determinar si son alcanzables desde un vértice inicial. Si todos los vértices son alcanzables, el grafo es conexo.</li>
+    <li><strong>Algoritmo de BFS (Búsqueda en Anchura):</strong> Similar al DFS, este algoritmo también puede ser utilizado para verificar la conectividad de un grafo, explorando todos los vértices a un nivel de profundidad antes de pasar al siguiente.</li>
+</ul>
+
+<h6>Aplicaciones de la Conectividad</h6>
+<p>La conectividad tiene aplicaciones prácticas en diversas áreas:</p>
+<ul>
+    <li><strong>Redes de Comunicación:</strong> Asegurar que todos los nodos en una red estén interconectados es esencial para la transmisión de datos.</li>
+    <li><strong>Transporte:</strong> En sistemas de transporte, la conectividad garantiza que las rutas estén disponibles para los viajeros.</li>
+    <li><strong>Redes Sociales:</strong> Analizar la conectividad entre usuarios puede ayudar a entender la difusión de información y la influencia social.</li>
+</ul>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+
+<div class="modal fade" id="arboles">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Árboles</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                
+            </div>
+            <div class="modal-body">
+                <p>Los <strong>árboles</strong> son una estructura de datos fundamental en la teoría de grafos y la informática. Se caracterizan por ser un tipo especial de grafo que es conexo y acíclico, lo que significa que no contiene ciclos y hay un camino único entre cualquier par de vértices. Los árboles son ampliamente utilizados en diversas aplicaciones, desde la organización de datos hasta la representación de jerarquías.</p>
+
+<h6>Definición de Árbol</h6>
+<p>Un árbol se define formalmente como un grafo que cumple con las siguientes propiedades:</p>
+<ul>
+    <li>Es conexo: hay un camino entre cualquier par de vértices.</li>
+    <li>No contiene ciclos: no hay un camino que regrese al mismo vértice sin repetir aristas.</li>
+    <li>Si un árbol tiene N vértices, siempre tendrá exactamente N-1 aristas.</li>
+</ul>
+
+<h6>Tipos de Árboles</h6>
+<p>Existen varios tipos de árboles, cada uno con características y aplicaciones específicas:</p>
+<ul>
+    <li><strong>Árbol Binario:</strong> Cada nodo tiene como máximo dos hijos, conocidos como hijo izquierdo y hijo derecho. Los árboles binarios son fundamentales en la implementación de estructuras de datos como pilas y colas.</li>
+    <li><strong>Árbol de Búsqueda Binaria (ABB):</strong> Un tipo de árbol binario donde los nodos a la izquierda de un nodo son menores y los nodos a la derecha son mayores. Esto permite realizar búsquedas eficientes.</li>
+    <li><strong>Árbol AVL:</strong> Un árbol de búsqueda binaria auto-balanceado que garantiza que la altura de los subárboles izquierdo y derecho de cualquier nodo difiera en no más de uno, lo que asegura operaciones de búsqueda, inserción y eliminación en tiempo logarítmico.</li>
+    <li><strong>Árbol Rojo-Negro:</strong> Otro tipo de árbol de búsqueda binaria auto-balanceado que mantiene propiedades específicas para asegurar que el árbol permanezca equilibrado durante las operaciones de inserción y eliminación.</li>
+</ul>
+
+<h6>Propiedades de los Árboles</h6>
+<p>Los árboles tienen varias propiedades interesantes:</p>
+<ul>
+    <li><strong>Altura de un Árbol:</strong> La altura de un árbol es la longitud del camino más largo desde la raíz hasta una hoja. La altura es un factor crítico en la eficiencia de las operaciones en árboles.</li>
+    <li><strong>Número de Hojas:</strong> En un árbol, las hojas son los nodos que no tienen hijos. La cantidad de hojas puede variar dependiendo de la estructura del árbol.</li>
+    <li><strong>Camino Único:</strong> Entre cualquier par de nodos en un árbol, siempre existe un único camino, lo que simplifica muchas operaciones y algoritmos.</li>
+</ul>
+
+<h6>Aplicaciones de los Árboles</h6>
+<p>Los árboles tienen numerosas aplicaciones en la informática y otras disciplinas:</p>
+<ul>
+    <li><strong>Organización de Datos:</strong> Los árboles se utilizan para organizar datos de manera jerárquica, como en sistemas de archivos y bases de datos.</li>
+    <li><strong>Algoritmos de Búsqueda:</strong> Los árboles de búsqueda binaria permiten realizar búsquedas eficientes, lo que es esencial en aplicaciones que requieren acceso rápido a datos.</li>
+    <li><strong>Compresión de Datos:</strong> Los árboles de Huffman se utilizan en algoritmos de compresión para representar datos de manera eficiente.</li>
+    <li><strong>Representación de Jerarquías:</strong> Los árboles son ideales para modelar estructuras jerárquicas, como organigramas y clasificaciones.</li>
+</ul>
+            </div>
+
+            <div class="modal-footer">
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+
+<div class="modal fade" id="planos">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Grafos Planos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                
+            </div>
+            <div class="modal-body">
+                <p>Los <strong>grafos planos</strong> son una categoría especial de grafos que pueden ser dibujados en un plano bidimensional de tal manera que sus aristas no se crucen, excepto en los vértices. Esta propiedad de ser "plano" tiene importantes implicaciones en la teoría de grafos y en diversas aplicaciones prácticas, como el diseño de circuitos y la representación de redes.</p>
+
+<h6>Definición de Grafos Planos</h6>
+<p>Un grafo se considera <strong>plano</strong> si puede ser representado en el plano sin que sus aristas se crucen. Esto significa que, al dibujar el grafo, cada arista debe ser una línea recta que conecta dos vértices sin intersectar otras aristas. Si un grafo no puede ser dibujado de esta manera, se clasifica como un <strong>grafo no plano</strong>.</p>
+
+<h6>Teorema de Kuratowski</h6>
+<p>El teorema de Kuratowski es fundamental en la teoría de grafos planos. Establece que un grafo es plano si y solo si no contiene un subgrafo que sea un <strong>K5</strong> (un grafo completo de cinco vértices) o un <strong>K3,3</strong> (un grafo bipartito completo con tres vértices en cada conjunto). Este teorema proporciona una herramienta poderosa para determinar la planitud de un grafo.</p>
+
+<h6>Propiedades de los Grafos Planos</h6>
+<p>Los grafos planos tienen varias propiedades interesantes:</p>
+<ul>
+    <li><strong>Relación entre Vértices, Aristas y Caras:</strong> Según el teorema de Euler, para un grafo plano con V vértices, E aristas y F caras (regiones delimitadas por las aristas), se cumple la relación: V - E + F = 2. Esta relación es fundamental para entender la estructura de los grafos planos.</li>
+    <li><strong>Coloración de Grafos:</strong> Un resultado importante en la teoría de grafos es que cualquier grafo plano puede ser coloreado con un máximo de cuatro colores de tal manera que no haya dos vértices adyacentes del mismo color. Este es el famoso <strong>teorema de los cuatro colores</strong>.</li>
+</ul>
+
+<h6>Aplicaciones de los Grafos Planos</h6>
+<p>Los grafos planos tienen numerosas aplicaciones en diferentes campos:</p>
+<ul>
+    <li><strong>Diseño de Circuitos:</strong> En la ingeniería electrónica, los grafos planos se utilizan para diseñar circuitos integrados, donde es crucial minimizar el cruce de conexiones para evitar interferencias.</li>
+    <li><strong>Redes de Transporte:</strong> Los grafos planos pueden modelar redes de carreteras y rutas de transporte, facilitando la planificación y optimización de rutas.</li>
+    <li><strong>Visualización de Datos:</strong> En la visualización de datos, los grafos planos permiten representar relaciones complejas de manera clara y comprensible, evitando confusiones que pueden surgir de cruces innecesarios.</li>
+</ul>
+
+<h6>Algoritmos para Grafos Planos</h6>
+<p>Existen varios algoritmos diseñados específicamente para trabajar con grafos planos:</p>
+<ul>
+    <li><strong>Algoritmos de Dibujo de Grafos:</strong> Estos algoritmos buscan representar grafos planos de manera estética y clara, minimizando el cruce de aristas y optimizando la disposición de los vértices.</li>
+    <li><strong>Algoritmos de Coloración:</strong> Se utilizan para asignar colores a los vértices de un grafo plano, asegurando que no haya vértices adyacentes del mismo color, lo que es esencial en aplicaciones de asignación de recursos.</li>
+</ul>
+            </div>
+            <div class="modal-footer">
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+
+
+<div class="modal fade" id="transporte">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Redes de Transporte</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                
+            </div>
+            <div class="modal-body">
+                <h6>La teoría de grafos en redes de transporte</h6>
+<p>La teoría de grafos tiene una aplicación muy práctica y eficiente en las redes de transporte, ya que estas pueden representarse como un grafo donde los <em>nodos</em> son puntos clave (como ciudades, estaciones o aeropuertos) y las <em>aristas</em> son las conexiones entre ellos (como carreteras, rutas aéreas o vías ferroviarias). Aquí te explico cómo se aplica:</p>
+
+<h6>1. Optimización de rutas</h6>
+<p>Una de las aplicaciones más conocidas es determinar la ruta más corta o eficiente entre dos puntos. Usando algoritmos como el de Dijkstra o el A*, se puede calcular el trayecto más rápido, más económico o con menor consumo de recursos para el transporte de personas o mercancías.</p>
+<p><strong>Ejemplo:</strong> Encontrar la mejor ruta entre dos ciudades minimizando el costo de combustible.</p>
+
+<h6>2. Gestión del tráfico</h6>
+<p>Los grafos permiten identificar áreas de alta congestión (nodos o aristas con mucho flujo) en una red de transporte. Con esta información, es posible optimizar el uso de estas vías o desarrollar estrategias para reducir la congestión.</p>
+<p><strong>Ejemplo:</strong> Rediseñar rutas de autobuses para evitar áreas de tráfico denso en horas pico.</p>
+
+<h6>3. Planificación de infraestructuras</h6>
+<p>En redes de transporte nuevas o en expansión, la teoría de grafos ayuda a identificar las áreas donde la construcción de nuevas conexiones (<em>aristas</em>) maximizaría la conectividad y eficiencia general del sistema.</p>
+<p><strong>Ejemplo:</strong> Decidir dónde construir un puente o una vía adicional para conectar dos regiones clave.</p>
+
+<h6>4. Identificación de vulnerabilidades</h6>
+<p>Al analizar la conectividad del grafo, se pueden identificar puntos o conexiones críticas cuya interrupción afectaría severamente el funcionamiento de toda la red. Esto es esencial para planificar medidas de contingencia.</p>
+<p><strong>Ejemplo:</strong> Detectar un nodo clave en una red de transporte ferroviario que, si falla, podría desconectar varias ciudades.</p>
+
+<h6>5. Problemas de flujo máximo</h6>
+<p>Con herramientas de la teoría de grafos, es posible calcular el flujo máximo que una red puede soportar, lo cual es útil para garantizar que las vías de transporte puedan satisfacer las demandas sin sobrecargarse.</p>
+<p><strong>Ejemplo:</strong> Maximizar la cantidad de mercancías transportadas entre puertos marítimos.</p>
+
+            </div>
+            <div class="modal-footer">
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+
+<div class="modal fade" id="sociales">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Análisis de Redes Sociales</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                
+            </div>
+            <div class="modal-body">
+                <p>La teoría de grafos se utiliza ampliamente para estudiar y analizar redes sociales. En este contexto, los <em>nodos</em> representan a las personas, cuentas o entidades dentro de una red social, mientras que las <em>aristas</em> representan las conexiones entre ellos, como amistades, seguidores o interacciones. Aquí te explico algunas de sus aplicaciones más importantes:</p>
+
+<h6>1. Identificación de comunidades</h6>
+<p>Con la teoría de grafos, es posible detectar comunidades o grupos dentro de una red social que tienen conexiones más fuertes entre sí que con el resto de la red. Esto se logra mediante algoritmos como el de Louvain o Girvan-Newman.</p>
+<p><strong>Ejemplo:</strong> Identificar grupos de usuarios con intereses comunes en plataformas como Facebook o Twitter.</p>
+
+<h6>2. Análisis de influencia</h6>
+<p>Se pueden determinar los nodos más influyentes en una red social utilizando métricas como el grado de centralidad, la centralidad de intermediación (betweenness) o la centralidad de cercanía. Estos nodos son actores clave que pueden impactar significativamente en la difusión de información.</p>
+<p><strong>Ejemplo:</strong> Identificar a los influenciadores clave en una campaña de marketing digital.</p>
+
+<h6>3. Difusión de información</h6>
+<p>La teoría de grafos permite modelar cómo se difunde la información o los comportamientos a través de una red social. Esto es especialmente útil para analizar la propagación de noticias, memes o incluso rumores.</p>
+<p><strong>Ejemplo:</strong> Estudiar cómo se viraliza un video en YouTube a través de las conexiones entre usuarios.</p>
+
+<h6>4. Detección de anomalías</h6>
+<p>Con grafos, es posible identificar patrones inusuales en una red social, como la aparición de cuentas falsas o actividades sospechosas. Esto se hace analizando propiedades estructurales de los nodos y sus conexiones.</p>
+<p><strong>Ejemplo:</strong> Detectar bots automatizados en redes sociales como Instagram o Twitter.</p>
+
+<h6>5. Recomendación de conexiones</h6>
+<p>Los grafos se usan para sugerir nuevas conexiones entre usuarios en función de la similitud de sus redes. Esto se basa en conceptos como los amigos en común o la probabilidad de enlace.</p>
+<p><strong>Ejemplo:</strong> La función "Personas que quizá conozcas" en LinkedIn se basa en estos principios.</p>
+            </div>
+            <div class="modal-footer">
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+
+<div class="modal fade" id="bioinfor">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Bioinformática</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                
+            </div>
+            <div class="modal-body">
+                <p>La teoría de grafos juega un papel crucial en la bioinformática, ya que permite modelar y analizar sistemas biológicos complejos. En este contexto, los <em>nodos</em> pueden representar genes, proteínas, metabolitos u otros elementos biológicos, mientras que las <em>aristas</em> representan relaciones o interacciones entre ellos, como interacciones genéticas o proteicas. Aquí están algunas de sus aplicaciones más importantes:</p>
+
+<h6>1. Análisis de redes de interacción proteica</h6>
+<p>Los grafos se utilizan para representar las interacciones entre proteínas en una célula. Esto ayuda a identificar proteínas clave que desempeñan roles fundamentales en procesos biológicos y enfermedades.</p>
+<p><strong>Ejemplo:</strong> Identificar proteínas críticas en el desarrollo de cáncer mediante el análisis de redes proteicas.</p>
+
+<h6>2. Reconstrucción de redes metabólicas</h6>
+<p>En biología de sistemas, los grafos modelan las rutas metabólicas de un organismo, donde los nodos son metabolitos y las aristas representan reacciones químicas. Esto permite estudiar flujos metabólicos y diseñar estrategias para ingeniería metabólica.</p>
+<p><strong>Ejemplo:</strong> Optimizar la producción de un compuesto químico en microorganismos mediante el análisis de redes metabólicas.</p>
+
+<h6>3. Análisis de redes genéticas</h6>
+<p>La teoría de grafos se aplica para modelar redes de regulación génica, donde los genes regulan la expresión de otros genes. Esto es esencial para comprender cómo se controlan los procesos celulares a nivel molecular.</p>
+<p><strong>Ejemplo:</strong> Analizar cómo los genes responden ante condiciones ambientales específicas en organismos modelo.</p>
+
+<h6>4. Alineamiento de secuencias genómicas</h6>
+<p>Los grafos se utilizan para representar secuencias genómicas y realizar alineamientos eficientes entre ellas. Esto es especialmente útil en la comparación de genomas entre especies y el ensamblaje de secuencias de ADN.</p>
+<p><strong>Ejemplo:</strong> Realizar un ensamblaje genómico utilizando un grafo de Bruijn para analizar datos obtenidos por secuenciación masiva.</p>
+
+<h6>5. Análisis de filogenias</h6>
+<p>En estudios evolutivos, los grafos representan relaciones filogenéticas entre especies, modelando cómo se han diversificado a lo largo del tiempo. Esto ayuda a reconstruir árboles filogenéticos de manera precisa.</p>
+<p><strong>Ejemplo:</strong> Construir un árbol filogenético para estudiar el origen común de un conjunto de organismos.</p>
+            </div>
+            <div class="modal-footer">
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+
+
+<div class="modal fade" id="algoritmo">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Algoritmos en Computación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                
+            </div>
+            <div class="modal-body">
+                <h6>La teoría de grafos en algoritmos de computación</h6>
+<p>La teoría de grafos es una herramienta esencial en el desarrollo de algoritmos de computación, ya que permite modelar y resolver problemas complejos de manera eficiente. En este contexto, los <em>nodos</em> representan entidades como datos o procesos, mientras que las <em>aristas</em> representan relaciones entre ellas, como conexiones en redes o dependencias en tareas. Aquí se presentan algunas de sus aplicaciones principales:</p>
+
+<h6>1. Algoritmos de búsqueda de caminos</h6>
+<p>La teoría de grafos es fundamental para diseñar algoritmos que encuentran rutas óptimas en un grafo. Ejemplos de estos algoritmos incluyen Dijkstra, Bellman-Ford y A*, que se utilizan para calcular la ruta más corta entre nodos.</p>
+<p><strong>Ejemplo:</strong> Encontrar la ruta más corta entre servidores en una red para minimizar la latencia.</p>
+
+<h6>2. Representación y análisis de redes</h6>
+<p>Los grafos se usan para modelar redes computacionales, como redes de computadoras o redes sociales. Esto permite optimizar la transferencia de datos, identificar cuellos de botella y analizar la estructura de las redes.</p>
+<p><strong>Ejemplo:</strong> Diseñar una red eficiente de entrega de datos en un centro de datos utilizando análisis de grafos.</p>
+
+<h6>3. Resolución de problemas de flujo</h6>
+<p>La teoría de grafos se aplica en algoritmos que calculan el flujo máximo en un grafo, como el algoritmo de Ford-Fulkerson. Esto es útil en problemas donde se busca maximizar el uso de recursos, como en redes de transporte o enrutamiento de datos.</p>
+<p><strong>Ejemplo:</strong> Optimizar el flujo de paquetes en una red de telecomunicaciones.</p>
+
+<h6>4. Ordenación topológica</h6>
+<p>La ordenación topológica en grafos dirigidos acíclicos permite organizar tareas en un orden tal que todas las dependencias se respeten. Esto es útil en programación, compiladores y planificación de tareas.</p>
+<p><strong>Ejemplo:</strong> Determinar el orden de ejecución de tareas en un sistema de compilación.</p>
+
+<h6>5. Algoritmos de grafos mínimos</h6>
+<p>Los grafos se emplean para diseñar algoritmos que encuentran árboles generadores mínimos (como Kruskal o Prim), que son fundamentales para optimizar redes y conexiones físicas o virtuales.</p>
+<p><strong>Ejemplo:</strong> Diseñar una red de cables de fibra óptica con el menor costo posible.</p>
+
+<h6>6. Correspondencias y emparejamientos</h6>
+<p>La teoría de grafos también se utiliza para resolver problemas de emparejamiento máximo, como el algoritmo de Edmonds para emparejamientos en grafos bipartitos, aplicable en asignación de recursos.</p>
+<p><strong>Ejemplo:</strong> Emparejar empleados con tareas en sistemas de optimización de recursos.</p>
+            </div>
+            <div class="modal-footer">
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+
+<div class="modal fade" id="redes">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Planeación de Redes Eléctricas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+            <div class="modal-body">
+                <p>La teoría de grafos es una herramienta esencial en la planificación y optimización de redes eléctricas, permitiendo modelar sistemas complejos de distribución y transmisión de energía. En este contexto, los <em>nodos</em> representan estaciones eléctricas, transformadores o puntos de consumo, mientras que las <em>aristas</em> representan las líneas eléctricas que conectan estos puntos. Aquí se presentan algunas de sus aplicaciones principales:</p>
+
+<h6>1. Diseño de redes de distribución</h6>
+<p>Los grafos permiten planificar cómo distribuir la electricidad de manera eficiente desde las plantas generadoras hasta los consumidores, minimizando costos de construcción y pérdidas de energía.</p>
+<p><strong>Ejemplo:</strong> Diseñar una red de distribución eléctrica óptima para conectar un conjunto de zonas residenciales con una estación transformadora.</p>
+
+<h6>2. Análisis de flujo de carga</h6>
+<p>Se utiliza la teoría de grafos para modelar el flujo de carga a través de una red eléctrica y analizar cómo la electricidad se distribuye en tiempo real. Esto ayuda a identificar cuellos de botella y evitar sobrecargas.</p>
+<p><strong>Ejemplo:</strong> Identificar líneas de transmisión que están cerca de su límite de capacidad para planificar mejoras.</p>
+
+<h6>3. Reducción de pérdidas eléctricas</h6>
+<p>Mediante el análisis de grafos, es posible diseñar redes eléctricas que reduzcan las pérdidas de energía durante la transmisión, optimizando las rutas y la estructura general del sistema.</p>
+<p><strong>Ejemplo:</strong> Rediseñar una red rural para minimizar las pérdidas de energía al conectar pequeñas localidades.</p>
+
+<h6>4. Planificación de redes robustas</h6>
+<p>La teoría de grafos permite diseñar redes eléctricas que sean robustas frente a fallas, asegurando que los cortes en un punto específico no interrumpan el suministro general.</p>
+<p><strong>Ejemplo:</strong> Implementar redes en anillo o redundantes para garantizar un suministro continuo en caso de fallas en alguna línea.</p>
+
+<h6>5. Identificación de nodos críticos</h6>
+<p>Con los grafos, se pueden analizar redes eléctricas para determinar nodos o aristas críticas cuya falla podría causar interrupciones importantes en el sistema.</p>
+<p><strong>Ejemplo:</strong> Identificar subestaciones clave que requieren mantenimiento prioritario para prevenir apagones masivos.</p>
+
+<h6>6. Optimización del uso de recursos</h6>
+<p>Se aplica la teoría de grafos para optimizar la ubicación de estaciones generadoras y transformadores, considerando factores como la demanda y los costos operativos.</p>
+<p><strong>Ejemplo:</strong> Decidir la ubicación ideal para una nueva subestación en una zona en crecimiento.</p>
+
+            </div>
+            <div class="modal-footer">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+    <!-- Bootstrap Bundle con JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
