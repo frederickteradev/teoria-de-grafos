@@ -21,7 +21,7 @@
 
         .section-title {
             color: #6c757d;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         .feature-icon {
@@ -32,7 +32,7 @@
         footer {
             background-color: #343a40;
             color: white;
-            padding: 20px 0;
+            padding: 10px 0;
         }
 
         footer a {
@@ -43,6 +43,66 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        #grafo-canvas {
+    width: 100%; /* Ancho completo */
+    max-width: 600px; /* Máximo ancho */
+    height: auto; /* Ajustar altura automáticamente */
+    border: 1px solid #ccc; /* Añadir borde */
+}  
+/* Media Queries */
+@media (max-width: 1200px) {
+    .banner {
+        padding: 100px 15px; /* Ajustar padding para tabletas */
+    }
+}
+
+@media (max-width: 992px) {
+    .banner {
+        padding: 40px 10px; /* Ajuste para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 768px) {
+    .banner {
+        padding: 100px 10px; /* Ajustar padding para móviles */
+    }
+    
+    .feature-icon {
+        font-size: 30px; 
+    }
+    
+    .section-title {
+        margin-bottom: 15px; 
+    }
+    
+    .col-12 {
+        margin-bottom: 20px; /* Añadir margen entre las columnas */
+    }
+    
+    h1.display-4 {
+        font-size: 2.5rem; /* Ajustar tamaño de título en móviles */
+    }
+
+    h2.section-title {
+        font-size: 2rem; /* Ajustar tamaño del subtítulo */
+    }
+
+    p {
+        font-size: 0.9rem; /* Ajustar tamaño de fuente para mejor legibilidad */
+    }
+}
+
+@media (max-width: 576px) {
+    .feature-icon {
+        font-size: 24px; /* Más pequeño en pantallas muy pequeñas */
+    }
+    
+    .btn {
+        width: 100%; /* Botones de ancho completo */
+        margin-top: 10px; /* Espaciado entre botones */
+    }
+}
     </style>
 </head>
 
@@ -208,13 +268,13 @@
         <!-- Representación de Nodos -->
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="d-flex justify-content-around align-items-center mb-4">
+                <div class="d-flex flex-wrap justify-content-around align-items-center mb-4">
                     <!-- Nodos como botones -->
                     <button class="btn btn-primary btn-lg node-button" data-node="A">Nodo A</button>
                     <button class="btn btn-primary btn-lg node-button" data-node="B">Nodo B</button>
                     <button class="btn btn-primary btn-lg node-button" data-node="C">Nodo C</button>
                 </div>
-                <div class="d-flex justify-content-around align-items-center mb-4">
+                <div class="d-flex flex-wrap justify-content-around align-items-center mb-4">
                     <button class="btn btn-primary btn-lg node-button" data-node="D">Nodo D</button>
                     <button class="btn btn-primary btn-lg node-button" data-node="E">Nodo E</button>
                     <button class="btn btn-primary btn-lg node-button" data-node="F">Nodo F</button>
